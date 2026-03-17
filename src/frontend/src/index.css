@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.97 0.008 85;
+    --foreground: 0.18 0.025 255;
+    --card: 0.99 0.004 85;
+    --card-foreground: 0.18 0.025 255;
+    --popover: 0.99 0.004 85;
+    --popover-foreground: 0.18 0.025 255;
+    --primary: 0.34 0.09 165;
+    --primary-foreground: 0.97 0.008 85;
+    --secondary: 0.93 0.012 85;
+    --secondary-foreground: 0.25 0.04 255;
+    --muted: 0.91 0.01 85;
+    --muted-foreground: 0.52 0.02 255;
+    --accent: 0.72 0.18 65;
+    --accent-foreground: 0.15 0.02 65;
+    --destructive: 0.55 0.22 28;
+    --destructive-foreground: 0.97 0.008 85;
+    --border: 0.88 0.015 85;
+    --input: 0.88 0.015 85;
+    --ring: 0.34 0.09 165;
+    --radius: 0.75rem;
+    --chart-1: 0.72 0.18 65;
+    --chart-2: 0.34 0.09 165;
+    --chart-3: 0.6 0.15 200;
+    --chart-4: 0.65 0.12 140;
+    --chart-5: 0.55 0.22 28;
+    --sidebar: 0.97 0.008 85;
+    --sidebar-foreground: 0.18 0.025 255;
+    --sidebar-primary: 0.34 0.09 165;
+    --sidebar-primary-foreground: 0.97 0.008 85;
+    --sidebar-accent: 0.93 0.012 85;
+    --sidebar-accent-foreground: 0.25 0.04 255;
+    --sidebar-border: 0.88 0.015 85;
+    --sidebar-ring: 0.34 0.09 165;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "DM Serif Display", serif;
+  }
+}
+
+@layer utilities {
+  .listing-card-overlay {
+    background: linear-gradient(
+      to top,
+      oklch(0.15 0.03 255 / 0.92) 0%,
+      oklch(0.15 0.03 255 / 0.3) 60%,
+      transparent 100%
+    );
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.25 0.08 165 / 0.9) 0%,
+      oklch(0.2 0.06 200 / 0.75) 100%
+    );
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px oklch(0.15 0.03 255 / 0.15);
+  }
+}
